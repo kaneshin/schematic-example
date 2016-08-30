@@ -1,0 +1,176 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>API Spec</title></head><body><h2><a name="resource-user">User</a></h2>
+
+<p>Stability: <code>prototype</code></p>
+
+<p>FIXME</p>
+
+<h3>Attributes</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>created_at</strong></td>
+<td><em>date-time</em></td>
+<td>when user was created</td>
+<td><code>&quot;2015-01-01T12:00:00Z&quot;</code></td>
+</tr>
+<tr>
+<td><strong>id</strong></td>
+<td><em>uuid</em></td>
+<td>unique identifier of user</td>
+<td><code>&quot;01234567-89ab-cdef-0123-456789abcdef&quot;</code></td>
+</tr>
+<tr>
+<td><strong>name</strong></td>
+<td><em>string</em></td>
+<td>unique name of user</td>
+<td><code>&quot;example&quot;</code></td>
+</tr>
+<tr>
+<td><strong>updated_at</strong></td>
+<td><em>date-time</em></td>
+<td>when user was updated</td>
+<td><code>&quot;2015-01-01T12:00:00Z&quot;</code></td>
+</tr>
+</tbody></table>
+
+<h3>User Create</h3>
+
+<p>Create a new user.</p>
+
+<pre><code>POST /users
+</code></pre>
+
+<h4>Curl Example</h4>
+
+<pre><code class="bash">$ curl -n -X POST https://api.hello.com/users \
+  -d &#39;{
+}&#39; \
+  -H &quot;Content-Type: application/json&quot;
+</code></pre>
+
+<h4>Response Example</h4>
+
+<pre><code>HTTP/1.1 201 Created
+</code></pre>
+
+<pre><code class="json">{
+  &quot;created_at&quot;: &quot;2015-01-01T12:00:00Z&quot;,
+  &quot;id&quot;: &quot;01234567-89ab-cdef-0123-456789abcdef&quot;,
+  &quot;name&quot;: &quot;example&quot;,
+  &quot;updated_at&quot;: &quot;2015-01-01T12:00:00Z&quot;
+}
+</code></pre>
+
+<h3>User Delete</h3>
+
+<p>Delete an existing user.</p>
+
+<pre><code>DELETE /users/{user_id_or_name}
+</code></pre>
+
+<h4>Curl Example</h4>
+
+<pre><code class="bash">$ curl -n -X DELETE https://api.hello.com/users/$USER_ID_OR_NAME \
+  -H &quot;Content-Type: application/json&quot;
+</code></pre>
+
+<h4>Response Example</h4>
+
+<pre><code>HTTP/1.1 200 OK
+</code></pre>
+
+<pre><code class="json">{
+  &quot;created_at&quot;: &quot;2015-01-01T12:00:00Z&quot;,
+  &quot;id&quot;: &quot;01234567-89ab-cdef-0123-456789abcdef&quot;,
+  &quot;name&quot;: &quot;example&quot;,
+  &quot;updated_at&quot;: &quot;2015-01-01T12:00:00Z&quot;
+}
+</code></pre>
+
+<h3>User Info</h3>
+
+<p>Info for existing user.</p>
+
+<pre><code>GET /users/{user_id_or_name}
+</code></pre>
+
+<h4>Curl Example</h4>
+
+<pre><code class="bash">$ curl -n https://api.hello.com/users/$USER_ID_OR_NAME
+</code></pre>
+
+<h4>Response Example</h4>
+
+<pre><code>HTTP/1.1 200 OK
+</code></pre>
+
+<pre><code class="json">{
+  &quot;created_at&quot;: &quot;2015-01-01T12:00:00Z&quot;,
+  &quot;id&quot;: &quot;01234567-89ab-cdef-0123-456789abcdef&quot;,
+  &quot;name&quot;: &quot;example&quot;,
+  &quot;updated_at&quot;: &quot;2015-01-01T12:00:00Z&quot;
+}
+</code></pre>
+
+<h3>User List</h3>
+
+<p>List existing users.</p>
+
+<pre><code>GET /users
+</code></pre>
+
+<h4>Curl Example</h4>
+
+<pre><code class="bash">$ curl -n https://api.hello.com/users
+</code></pre>
+
+<h4>Response Example</h4>
+
+<pre><code>HTTP/1.1 200 OK
+</code></pre>
+
+<pre><code class="json">[
+  {
+    &quot;created_at&quot;: &quot;2015-01-01T12:00:00Z&quot;,
+    &quot;id&quot;: &quot;01234567-89ab-cdef-0123-456789abcdef&quot;,
+    &quot;name&quot;: &quot;example&quot;,
+    &quot;updated_at&quot;: &quot;2015-01-01T12:00:00Z&quot;
+  }
+]
+</code></pre>
+
+<h3>User Update</h3>
+
+<p>Update an existing user.</p>
+
+<pre><code>PATCH /users/{user_id_or_name}
+</code></pre>
+
+<h4>Curl Example</h4>
+
+<pre><code class="bash">$ curl -n -X PATCH https://api.hello.com/users/$USER_ID_OR_NAME \
+  -d &#39;{
+}&#39; \
+  -H &quot;Content-Type: application/json&quot;
+</code></pre>
+
+<h4>Response Example</h4>
+
+<pre><code>HTTP/1.1 200 OK
+</code></pre>
+
+<pre><code class="json">{
+  &quot;created_at&quot;: &quot;2015-01-01T12:00:00Z&quot;,
+  &quot;id&quot;: &quot;01234567-89ab-cdef-0123-456789abcdef&quot;,
+  &quot;name&quot;: &quot;example&quot;,
+  &quot;updated_at&quot;: &quot;2015-01-01T12:00:00Z&quot;
+}
+</code></pre>
+</body></html>
